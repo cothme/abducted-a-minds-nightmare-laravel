@@ -1,5 +1,5 @@
 <x-layout>
-    <h1 class="text-6xl text-center">fdasfsa</h1>
+    <h1 class="text-6xl text-center">ABDUCTED</h1>
     <p class="m-10 text-center text-lg">Now that there is the Tec-9, a crappy spray gun from South Miami. 
         This gun is advertised as the most popular gun in American crime. 
         Do you believe that shit? It actually says that in the little book that comes with it: 
