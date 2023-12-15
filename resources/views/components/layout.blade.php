@@ -33,6 +33,8 @@
                         laravel: "#ef3b2d",
                         abductedblack: "#212529",
                         abductedpink: "#C63D65",
+                        abducteddarkpink: "#803047",
+                        abducteddarkerpink: "#45232D",
                     },
                     screens: {
                         'xsm': '375px',
@@ -40,6 +42,9 @@
                     fontFamily: {
                         sans: ['AileronLight']
                     },
+                    backgroundImage: {
+                        'spacebg': "url('/local_images/space_bg.jpg')",
+                    }
                 },    
             },
         };
@@ -47,7 +52,8 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     <title>Mind's Nightmare</title>
 </head>
-<body>
+<body class="bg-spacebg">
+    {{--Big Screen Nav--}}
     <nav class="p-5 bg-abductedblack shadow items-center ">
         <div class="flex items-center justify-between w-full">
             <div class="flex items-center">
@@ -56,7 +62,7 @@
                         <img src="{{ asset('local_images/syncotech_logo_white.png')}}" alt="" class="w-16 h-16 mr-4">
                     </a>  
                 </span>
-                <ul class="hidden md:flex text-white text-2xl">
+                <ul class="hidden lg:flex text-white text-2xl">
                     <li class="hover:text-abductedpink duration-100 mr-4">
                         <a href="">HOME</a>
                     </li>
@@ -74,7 +80,10 @@
                     </li>
                 </ul>
             </div>
-            <div class="block md:hidden">
+            <a href="/users/login" class="hidden lg:block lg:flex lg:items-center h-12 px-6 m-2 
+                            text-lg rounded-lg text-indigo-100 bg-abductedpink 
+                            hover:bg-abducteddarkpink active:bg-abducteddarkerpink">Login</a>
+            <div class="block lg:hidden">
                 <button id="burger-icon" class="text-white focus:outline-none">
                     <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -83,7 +92,8 @@
             </div>
         </div>
     </nav>
-    <div id="responsive-menu" class="hidden md:hidden bg-abductedblack text-white text-2xl
+    {{--Small Screen Nav--}}
+    <div id="responsive-menu" class="hidden lg:hidden bg-abductedblack text-white text-2xl
                                     transition-opacity duration-300 opacity-0 opacity-1">
         <ul class="flex flex-col ml-4">
             <li class="hover:text-abductedpink duration-100 mb-2">
@@ -102,6 +112,9 @@
                 <a href="">DOWNLOAD</a>
             </li>
         </ul>
+        <a href="/users/login" class="h-12 px-6 m-2 
+                            text-lg rounded-lg text-indigo-100 bg-abductedpink 
+                            hover:bg-abducteddarkpink active:bg-abducteddarkerpink">Login</a>
     </div>              
 </body>
     <main>
