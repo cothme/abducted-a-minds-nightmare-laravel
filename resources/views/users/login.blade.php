@@ -43,8 +43,8 @@
                         sans: ['AileronLight']
                     },
                     backgroundImage: {
-                        'hero-pattern': "url('/img/hero-pattern.svg')",
-                    },
+                        'spacebg': "url('/local_images/space_bg.jpg')",
+                    }
                 },    
             },
         };
@@ -52,6 +52,36 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     <title>Mind's Nightmare</title>
 </head>
-<body>
+<body class="bg-spacebg flex items-center h-screen w-screen">
+    <div class="container mx-auto  flex flex-col lg:flex-row">
+        <!-- Image -->
+        <div class="w-full lg:w-1/2">
+          <img src="{{asset('/local_images/logo-with-effects.png')}}" alt="Your Image" class="object-scale-down">
+        </div>
+        {{-- Form --}}
+        <div class="lg:w-1/2 p-8 bg-abductedblack rounded-md shadow-lg m-8">
+          <h2 class="text-center text-white text-4xl text-2xl mb-8">Sign In</h2>
+          <form  class="flex flex-col" action="#" method="POST">
+            <div class="mb-4">
+            <label for="password" class="block text-white text-lg mb-2">Email:</label>
+              <input type="text" id="name" name="name" class="w-full p-2 border rounded-md" placeholder="example@email.com">
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block text-white text-lg mb-2">Password:</label>
+              <input type="password" id="password" name="password" class="w-full p-2 border rounded-md">
+            </div>
+            <div class="text-white">
+                <p>
+                    Dont have an account?
+                    <a href="/register" class="text-abductedpink">Register</a>
+                </p>
+            </div>
+            <button type="submit" class="self-center mt-4 w-1/2 text-white 
+                                        px-4 py-2 rounded-md bg-abductedpink 
+                                        hover:bg-abducteddarkpink active:bg-abducteddarkerpink">Submit</button>
+            <img src="{{ asset('local_images/syncotech_logo_white.png')}}" alt="" class="mt-4 self-center w-16 h-16 mr-4">
+          </form>
+        </div>
     
+      </div>
 </body>
