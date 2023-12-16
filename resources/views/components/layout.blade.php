@@ -80,7 +80,7 @@
                     </li>
                 </ul>
             </div>
-            <a href="/users/login" class="hidden lg:block lg:flex lg:items-center h-12 px-6 m-2 
+            <a href="/login" class="hidden lg:block lg:flex lg:items-center h-12 px-6 m-2 
                             text-lg rounded-lg text-indigo-100 bg-abductedpink 
                             hover:bg-abducteddarkpink active:bg-abducteddarkerpink">Login</a>
             <div class="block lg:hidden">
@@ -112,7 +112,7 @@
                 <a href="">DOWNLOAD</a>
             </li>
         </ul>
-        <a href="/users/login" class="h-12 px-6 m-2 
+        <a href="/login" class="h-12 px-6 m-2 
                             text-lg rounded-lg text-indigo-100 bg-abductedpink 
                             hover:bg-abducteddarkpink active:bg-abducteddarkerpink">Login</a>
     </div>              
