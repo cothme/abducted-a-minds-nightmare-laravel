@@ -64,12 +64,29 @@
           <form  class="flex flex-col" action="/users/authenticate" method="POST">
             @csrf
             <div class="mb-4">
-            <label for="password" class="block text-white text-lg mb-2">Email:</label>
-              <input type="text" id="name" name="name" class="w-full p-2 border rounded-md" placeholder="example@email.com">
+            <label for="email" class="block text-white text-lg mb-2">Email:</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                class="w-full p-2 border rounded-md" 
+                placeholder="example@email.com"
+                value="{{old('email')}}">
+                @error('email')
+                    <p class="text-red-500 text-ms mt-1">{{$message}}</p>
+                @enderror
             </div>
             <div class="mb-4">
                 <label for="password" class="block text-white text-lg mb-2">Password:</label>
-              <input type="password" id="password" name="password" class="w-full p-2 border rounded-md">
+              <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                class="w-full p-2 border rounded-md"
+                value="{{old('password')}}">
+                @error('password')
+                    <p class="text-red-500 text-ms mt-1">{{$message}}</p>
+                @enderror
             </div>
             <div class="text-white">
                 <p>

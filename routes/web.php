@@ -26,10 +26,12 @@ Route::get('/', function () {
     return view('index');
 });
 //Show Login Form
-Route::get('/login',[UserController::class, 'login']);
+Route::get('/login',[UserController::class, 'login'])->middleware('guest');
 //Get data from login form
 Route::post('/users/authenticate',[UserController::class, 'authenticate']);
+//Logout
+Route::post('/logout',[UserController::class, 'logout']);
 //Show Register Form
-Route::get('/signup',[UserController::class, 'signup']);
+Route::get('/signup',[UserController::class, 'signup'])->middleware('guest');
 //Get data from register form
 Route::post('/users',[UserController::class, 'createuser']);

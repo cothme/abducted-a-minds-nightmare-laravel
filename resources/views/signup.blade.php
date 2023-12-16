@@ -52,12 +52,8 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     <title>Mind's Nightmare</title>
 </head>
-<body class="bg-spacebg flex items-center h-screen w-screen">
-    <div class="container mx-auto  flex flex-col lg:flex-row">
-        <!-- Image -->
-        <div class="w-full lg:w-1/2">
-          <img src="{{asset('/local_images/logo-with-effects.png')}}" alt="Your Image" class="object-scale-down">
-        </div>
+<body class="bg-spacebg flex justify-center">
+    <div class="container flex items-center justify-center h-screen">
         {{-- Form --}}
         <div class="lg:w-1/2 p-8 bg-abductedpink rounded-md shadow-lg m-8">
           <h2 class="text-center text-white text-4xl text-2xl mb-8">Sign Up</h2>

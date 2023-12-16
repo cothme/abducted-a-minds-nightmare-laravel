@@ -80,9 +80,21 @@
                     </li>
                 </ul>
             </div>
-            <a href="/login" class="hidden lg:block lg:flex lg:items-center h-12 px-6 m-2 
+            @auth
+            <div class="flex items-center">
+                <p class="hidden lg:block text-lg text-white">Hello, {{auth()->user()->name}}</p>
+                <form method="POST" action="/logout">
+                    @csrf
+                    <button type="submit" class="hidden lg:block lg:flex lg:items-center h-12 px-6 m-2 
                             text-lg rounded-lg text-indigo-100 bg-abductedpink 
-                            hover:bg-abducteddarkpink active:bg-abducteddarkerpink">Login</a>
+                            hover:bg-abducteddarkpink active:bg-abducteddarkerpink">Logout</button>
+                </form>
+            </div>
+                @else
+                <a href="/login" class="hidden lg:block lg:flex lg:items-center h-12 px-6 m-2 
+                        text-lg rounded-lg text-indigo-100 bg-abductedpink 
+                        hover:bg-abducteddarkpink active:bg-abducteddarkerpink">Login</a>
+            @endauth
             <div class="block lg:hidden">
                 <button id="burger-icon" class="text-white focus:outline-none">
                     <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -112,9 +124,21 @@
                 <a href="">DOWNLOAD</a>
             </li>
         </ul>
-        <a href="/login" class="h-12 px-6 m-2 
-                            text-lg rounded-lg text-indigo-100 bg-abductedpink 
-                            hover:bg-abducteddarkpink active:bg-abducteddarkerpink">Login</a>
+        @auth
+        <div class="flex items-center">
+            <p class="text-lg text-white">Hello, {{auth()->user()->name}}</p>
+            <form method="POST" action="/logout">
+                @csrf
+                <button type="submit" class="h-12 px-6 m-2 
+                        text-lg rounded-lg text-indigo-100 bg-abductedpink 
+                        hover:bg-abducteddarkpink active:bg-abducteddarkerpink">Logout</button>
+            </form>
+        </div>
+            @else
+            <a href="/login" class="h-12 px-6 m-2 
+                    text-lg rounded-lg text-indigo-100 bg-abductedpink 
+                    hover:bg-abducteddarkpink active:bg-abducteddarkerpink">Login</a>
+        @endauth                    
     </div>              
 </body>
     <main>
