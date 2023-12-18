@@ -12,7 +12,7 @@
         crossorigin="anonymous"
         referrerpolicy="no-referrer"
     />
-    <link href="{{asset('js/navbar.js')}}">
+    @vite('resources/css/app.css')
     <style type="text/css">
         @font-face {
             font-family: AileronLight;
@@ -24,31 +24,6 @@
             font-weight: 300;
         }
         </style>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        laravel: "#ef3b2d",
-                        abductedblack: "#212529",
-                        abductedpink: "#C63D65",
-                        abducteddarkpink: "#803047",
-                        abducteddarkerpink: "#45232D",
-                    },
-                    screens: {
-                        'xsm': '375px',
-                    },
-                    fontFamily: {
-                        sans: ['AileronLight']
-                    },
-                    backgroundImage: {
-                        'spacebg': "url('/local_images/space_bg.jpg')",
-                    }
-                },    
-            },
-        };
-    </script>
     <script src="//unpkg.com/alpinejs" defer></script>
     <title>Mind's Nightmare</title>
 </head>
