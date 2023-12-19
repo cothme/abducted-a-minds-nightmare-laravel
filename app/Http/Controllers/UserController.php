@@ -48,4 +48,10 @@ class UserController extends Controller
         $user = User::create($formFields);
         return redirect('/');
     }
+    public function show_profile($name){
+        $users = User::where('name', $name)->first();
+        return view('user.profile',[
+            'user' => $users,
+        ]);
+    }
 }

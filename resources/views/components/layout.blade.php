@@ -27,7 +27,7 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     <title>Mind's Nightmare</title>
 </head>
-<body class="bg-spacebg">
+<div class="bg-spacebg">
     {{--Big Screen Nav--}}
     <nav class="p-5 bg-abductedblack shadow items-center ">
         <div class="flex items-center justify-between w-full">
@@ -57,16 +57,19 @@
             </div>
             @auth
             <div class="flex items-center">
-                <p class="hidden lg:block text-lg text-white">Hello, {{auth()->user()->name}}</p>
+                {{-- <p class="hidden lg:block text-lg text-white">Hello, {{auth()->user()->name}}</p> --}}
+                <a href="/user/profile/{{ auth()->user()->name }}">
+                    <img src="{{ asset('local_images/cothme.jpg') }}" alt="" class="w-20 h-20 rounded-full mx-4">
+                </a>
                 <form method="POST" action="/logout">
                     @csrf
-                    <button type="submit" class="hidden lg:block lg:flex lg:items-center h-12 px-6 m-2 
+                    <button type="submit" class="hidden lg:flex lg:items-center h-12 px-6 m-2 
                             text-lg rounded-lg text-indigo-100 bg-abductedpink 
                             hover:bg-abducteddarkpink active:bg-abducteddarkerpink">Logout</button>
                 </form>
             </div>
                 @else
-                <a href="/login" class="hidden lg:block lg:flex lg:items-center h-12 px-6 m-2 
+                <a href="/login" class="hidden lg:flex lg:items-center h-12 px-6 m-2 
                         text-lg rounded-lg text-indigo-100 bg-abductedpink 
                         hover:bg-abducteddarkpink active:bg-abducteddarkerpink">Login</a>
             @endauth
@@ -115,10 +118,10 @@
                     hover:bg-abducteddarkpink active:bg-abducteddarkerpink">Login</a>
         @endauth                    
     </div>              
-</body>
-    <main>
+</div>
+    <body class="bg-spacebg">
         {{$slot}} 
-    </main>
+    </body>
     <footer class="lg:fixed sm:fixed xsm:fixed md:fixed bottom-0 left-0 w-full 
                 flex flex-col items-center justify-start  
                 bg-abductedblack text-white md:justify-center">
@@ -140,7 +143,6 @@
         <p class="text-lg text-center">&copy; 2023 SYNC-O TECH INC ALL RIGHTS RESERVED</p>
     </div>
 </footer>
-</body>
 </html>
 <script>
     document.getElementById('burger-icon').addEventListener('click', function() {

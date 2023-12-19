@@ -35,3 +35,5 @@ Route::post('/logout',[UserController::class, 'logout']);
 Route::get('/signup',[UserController::class, 'signup'])->middleware('guest');
 //Get data from register form
 Route::post('/users',[UserController::class, 'createuser']);
+//Show Profile Page
+Route::get('/user/profile/{name}',[UserController::class, 'show_profile']);
